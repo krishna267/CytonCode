@@ -71,13 +71,34 @@ boolean useAccelOnly = false;
 #define FILTER_Q (0.5)        //critically damped is 0.707 (Butterworth)
 #define PEAK_GAIN_DB (0.0) //we don't want any gain in the passband
 #define HP_CUTOFF_HZ (0.5)  //set the desired cutoff for the highpass filter
-Biquad stopDC_filter(bq_type_highpass, HP_CUTOFF_HZ / SAMPLE_RATE_HZ, FILTER_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad stopDC_filter1(bq_type_highpass, HP_CUTOFF_HZ / SAMPLE_RATE_HZ, FILTER_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad stopDC_filter2(bq_type_highpass, HP_CUTOFF_HZ / SAMPLE_RATE_HZ, FILTER_Q, PEAK_GAIN_DB); //one for each channel because the object 
+Biquad stopDC_filter3(bq_type_highpass, HP_CUTOFF_HZ / SAMPLE_RATE_HZ, FILTER_Q, PEAK_GAIN_DB); //one for each channel because the object 
+Biquad stopDC_filter4(bq_type_highpass, HP_CUTOFF_HZ / SAMPLE_RATE_HZ, FILTER_Q, PEAK_GAIN_DB); //one for each channel because the object
+Biquad stopDC_filter5(bq_type_highpass, HP_CUTOFF_HZ / SAMPLE_RATE_HZ, FILTER_Q, PEAK_GAIN_DB); //one for each channel because the object 
+Biquad stopDC_filter6(bq_type_highpass, HP_CUTOFF_HZ / SAMPLE_RATE_HZ, FILTER_Q, PEAK_GAIN_DB); //one for each channel because the object 
+Biquad stopDC_filter7(bq_type_highpass, HP_CUTOFF_HZ / SAMPLE_RATE_HZ, FILTER_Q, PEAK_GAIN_DB); //one for each channel because the object 
+Biquad stopDC_filter8(bq_type_highpass, HP_CUTOFF_HZ / SAMPLE_RATE_HZ, FILTER_Q, PEAK_GAIN_DB); //one for each channel because the object 
 
 // Notch Filter
 #define NOTCH_FREQ_HZ (50.0)      // Make sure you select the right power line frequency; set it to 60Hz if you're in the U.S.
 #define NOTCH_Q (4.0)              //pretty sharp notch
 Biquad notch_filter1(bq_type_notch, NOTCH_FREQ_HZ / SAMPLE_RATE_HZ, NOTCH_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
 Biquad notch_filter2(bq_type_notch, NOTCH_FREQ_HZ / SAMPLE_RATE_HZ, NOTCH_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad notch_filter3(bq_type_notch, NOTCH_FREQ_HZ / SAMPLE_RATE_HZ, NOTCH_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad notch_filter4(bq_type_notch, NOTCH_FREQ_HZ / SAMPLE_RATE_HZ, NOTCH_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad notch_filter5(bq_type_notch, NOTCH_FREQ_HZ / SAMPLE_RATE_HZ, NOTCH_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad notch_filter6(bq_type_notch, NOTCH_FREQ_HZ / SAMPLE_RATE_HZ, NOTCH_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad notch_filter7(bq_type_notch, NOTCH_FREQ_HZ / SAMPLE_RATE_HZ, NOTCH_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad notch_filter8(bq_type_notch, NOTCH_FREQ_HZ / SAMPLE_RATE_HZ, NOTCH_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad notch_filter9(bq_type_notch, NOTCH_FREQ_HZ / SAMPLE_RATE_HZ, NOTCH_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad notch_filter10(bq_type_notch, NOTCH_FREQ_HZ / SAMPLE_RATE_HZ, NOTCH_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad notch_filter11(bq_type_notch, NOTCH_FREQ_HZ / SAMPLE_RATE_HZ, NOTCH_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad notch_filter12(bq_type_notch, NOTCH_FREQ_HZ / SAMPLE_RATE_HZ, NOTCH_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad notch_filter13(bq_type_notch, NOTCH_FREQ_HZ / SAMPLE_RATE_HZ, NOTCH_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad notch_filter14(bq_type_notch, NOTCH_FREQ_HZ / SAMPLE_RATE_HZ, NOTCH_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad notch_filter15(bq_type_notch, NOTCH_FREQ_HZ / SAMPLE_RATE_HZ, NOTCH_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad notch_filter16(bq_type_notch, NOTCH_FREQ_HZ / SAMPLE_RATE_HZ, NOTCH_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
 
 // Design signal detection filter
 
@@ -88,13 +109,22 @@ Biquad notch_filter2(bq_type_notch, NOTCH_FREQ_HZ / SAMPLE_RATE_HZ, NOTCH_Q, PEA
 #define AHP_FREQ_HZ (10.0f)  //focus on High Alpha waves
 Biquad AHP_bandpass_filter1(bq_type_bandpass, AHP_FREQ_HZ / SAMPLE_RATE_HZ, BP_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
 Biquad AHP_bandpass_filter2(bq_type_bandpass, AHP_FREQ_HZ / SAMPLE_RATE_HZ, BP_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad AHP_bandpass_filter3(bq_type_bandpass, AHP_FREQ_HZ / SAMPLE_RATE_HZ, BP_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad AHP_bandpass_filter4(bq_type_bandpass, AHP_FREQ_HZ / SAMPLE_RATE_HZ, BP_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad AHP_bandpass_filter5(bq_type_bandpass, AHP_FREQ_HZ / SAMPLE_RATE_HZ, BP_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad AHP_bandpass_filter6(bq_type_bandpass, AHP_FREQ_HZ / SAMPLE_RATE_HZ, BP_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad AHP_bandpass_filter7(bq_type_bandpass, AHP_FREQ_HZ / SAMPLE_RATE_HZ, BP_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad AHP_bandpass_filter8(bq_type_bandpass, AHP_FREQ_HZ / SAMPLE_RATE_HZ, BP_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad AHP_bandpass_filter9(bq_type_bandpass, AHP_FREQ_HZ / SAMPLE_RATE_HZ, BP_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad AHP_bandpass_filter10(bq_type_bandpass, AHP_FREQ_HZ / SAMPLE_RATE_HZ, BP_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad AHP_bandpass_filter11(bq_type_bandpass, AHP_FREQ_HZ / SAMPLE_RATE_HZ, BP_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad AHP_bandpass_filter12(bq_type_bandpass, AHP_FREQ_HZ / SAMPLE_RATE_HZ, BP_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad AHP_bandpass_filter13(bq_type_bandpass, AHP_FREQ_HZ / SAMPLE_RATE_HZ, BP_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad AHP_bandpass_filter14(bq_type_bandpass, AHP_FREQ_HZ / SAMPLE_RATE_HZ, BP_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad AHP_bandpass_filter15(bq_type_bandpass, AHP_FREQ_HZ / SAMPLE_RATE_HZ, BP_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
+Biquad AHP_bandpass_filter16(bq_type_bandpass, AHP_FREQ_HZ / SAMPLE_RATE_HZ, BP_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
 
-// BETA High Power (18 - 29.75Hz)
-#define BHP_FREQ_HZ (25.0f)  //focus on High Beta waves
-Biquad BHP_bandpass_filter1(bq_type_bandpass, BHP_FREQ_HZ / SAMPLE_RATE_HZ, BP_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
-Biquad BHP_bandpass_filter2(bq_type_bandpass, BHP_FREQ_HZ / SAMPLE_RATE_HZ, BP_Q, PEAK_GAIN_DB); //one for each channel because the object maintains the filter states
-
-Biquad *AHP_bp1, *AHP_bp2, *BHP_bp1, *BHP_bp2;
+Biquad *AHP_bp1,*AHP_bp2,*AHP_bp3,*AHP_bp4,*AHP_bp5,*AHP_bp6,*AHP_bp7,*AHP_bp8,*AHP_bp9,*AHP_bp10,*AHP_bp11,*AHP_bp12,*AHP_bp13,*AHP_bp14,*AHP_bp15,*AHP_bp16;
 ////////////////////////////// End Power Filters ////////////////////
 
 #define MICROVOLTS_PER_COUNT (0.02235174f)  //Nov 10,2013...assumes gain of 24, includes mystery factor of 2... = 4.5/24/(2^24) *  2
@@ -139,18 +169,6 @@ void setup(void) {
   digitalWrite(BUZZER_OUTPUT_PIN, HIGH);
   delay(1000);
   digitalWrite(BUZZER_OUTPUT_PIN, LOW);
-
-
-  // Turn off all channels except channel #1 in AlphaDetector Mode
-  if (AlphaDetector) {
-    changeChannelState_maintainRunningState(2, DEACTIVATE);
-    changeChannelState_maintainRunningState(3, DEACTIVATE);
-    changeChannelState_maintainRunningState(4, DEACTIVATE);
-    changeChannelState_maintainRunningState(5, DEACTIVATE);
-    changeChannelState_maintainRunningState(6, DEACTIVATE);
-    changeChannelState_maintainRunningState(7, DEACTIVATE);
-    changeChannelState_maintainRunningState(8, DEACTIVATE);
-  }
 }
 
 int prev_LED_val = 0, LED_val = 0;
@@ -366,169 +384,178 @@ void startFromScratch() {
 }
 
 // DO FILTER STUFF HERE IF YOU LIKE
-float counter = 100;
 int ind_count = 1;
-float AHP_tmp[250];
-float BHP_tmp[250];
-float Diff_H = 0;
-float AHP = 0;
-float BHP = 0;
-float A_HST = 0.0f;
-float A_HWT = 0.0f;
-float base_HST[35];
-float array_BHT[35];
-float base_AHST = 0;
-float base_BHT = 0;
-int base_ind = 0;
-int noise_ind = 0;
-float B_Noise = 50;
+float AHP_tmp1[250],AHP_tmp2[250],AHP_tmp3[250],AHP_tmp4[250],AHP_tmp5[250],AHP_tmp6[250],AHP_tmp7[250],AHP_tmp8[250];
+float Diff_H1 = 0,Diff_H2 = 0,Diff_H3 = 0,Diff_H4 = 0,Diff_H5 = 0,Diff_H6 = 0,Diff_H7 = 0,Diff_H8 = 0;
+float AHP1 = 0,AHP2 = 0,AHP3 = 0,AHP4 = 0,AHP5 = 0,AHP6 = 0,AHP7 = 0,AHP8 = 0;
 
-void Run_AlphaDetector(void) {
-  float val, DP_val, TP_val, ALP_val, AHP_val, BLP_val, BHP_val, rms_val;
-  // float DP_val2,TP_val2,ALP_val2,AHP_val2,BLP_val2,BHP_val2,rms_val2;
-  //loop over each channel
-  // Because we are reading the data directly the channels index is from [0 to 7]
-  val = (float) OBCI.channelDataInt[0]; //get the stored value for this sample from channel#1 (its index = 0)
+void Run_AlphaDetector(int cn) {
+  float val, AHP_val;
 
-  //apply DC-blocking highpass filter
-  val = stopDC_filter.process(val);    //apply DC-blocking filter
-
-  //apply 50Hz notch filter...twice to make it more effective
+  val = (float) OBCI.channelDataInt[0];
+  val = stopDC_filter1.process(val);
   val = notch_filter1.process(val);     //apply 50Hz notch filter
-  val = notch_filter2.process(val);     //apply 50Hz notch again
-  //put this data back into ADSManager in case we want to output i tusing the ADSManager buit-in output functions
+  val = notch_filter2.process(val);
   OBCI.channelDataInt[0] = (long) val;
-
-  // store the valued to be used by different bands
   float val_common = val;
-  //////////// Compute the power from different bands //////////////
-
   AHP_val = val_common;
   AHP_bp1 = &AHP_bandpass_filter1;
   AHP_bp2 = &AHP_bandpass_filter2;
   AHP_val = AHP_bp1->process(AHP_val);    //apply bandpass filter
   AHP_val = AHP_bp2->process(AHP_val);    //do it again to make it even tighter
+  AHP_tmp1[ind_count] = AHP_val * AHP_val;
 
-
-  // Get Beta value for noise cancelation
-  BHP_val = val_common;
-  BHP_bp1 = &BHP_bandpass_filter1;
-  BHP_bp2 = &BHP_bandpass_filter2;
-  BHP_val = BHP_bp1->process(BHP_val);    //apply bandpass filter
-  BHP_val = BHP_bp2->process(BHP_val);    //do it again to make it even tighter
-
-
-  //---------------- Update Counter & Act on data ------------------------//
-
-  // Scale the data and save it
-  AHP_tmp[ind_count] = AHP_val * AHP_val;
-  BHP_tmp[ind_count] = BHP_val * BHP_val;
+  
+  val = (float) OBCI.channelDataInt[1];
+  val = stopDC_filter2.process(val);
+  val = notch_filter3.process(val);     //apply 50Hz notch filter
+  val = notch_filter4.process(val);
+  OBCI.channelDataInt[1] = (long) val;
+  float val_common = val;    
+  AHP_val = val_common;
+  AHP_bp1 = &AHP_bandpass_filter3;
+  AHP_bp2 = &AHP_bandpass_filter4;
+  AHP_val = AHP_bp3->process(AHP_val);    //apply bandpass filter
+  AHP_val = AHP_bp4->process(AHP_val);    //do it again to make it even tighter
+  AHP_tmp2[ind_count] = AHP_val * AHP_val;
+  
+  
+  val = (float) OBCI.channelDataInt[2];
+  val = stopDC_filter3.process(val);
+  val = notch_filter5.process(val);     //apply 50Hz notch filter
+  val = notch_filter6.process(val);
+  OBCI.channelDataInt[2] = (long) val;
+  float val_common = val;
+  AHP_val = val_common;
+  AHP_bp1 = &AHP_bandpass_filter5;
+  AHP_bp2 = &AHP_bandpass_filter6;
+  AHP_val = AHP_bp5->process(AHP_val);    //apply bandpass filter
+  AHP_val = AHP_bp6->process(AHP_val);    //do it again to make it even tighter
+  AHP_tmp3[ind_count] = AHP_val * AHP_val;
+  
+  
+  val = (float) OBCI.channelDataInt[3];
+  val = stopDC_filter4.process(val);
+  val = notch_filter7.process(val);     //apply 50Hz notch filter
+  val = notch_filter8.process(val);
+  OBCI.channelDataInt[3] = (long) val;
+  float val_common = val;
+  AHP_val = val_common;
+  AHP_bp1 = &AHP_bandpass_filter7;
+  AHP_bp2 = &AHP_bandpass_filter8;
+  AHP_val = AHP_bp7->process(AHP_val);    //apply bandpass filter
+  AHP_val = AHP_bp8->process(AHP_val);    //do it again to make it even tighter   
+  AHP_tmp4[ind_count] = AHP_val * AHP_val;
+  
+  
+  val = (float) OBCI.channelDataInt[4];
+  val = stopDC_filter5.process(val);
+  val = notch_filter9.process(val);     //apply 50Hz notch filter
+  val = notch_filter10.process(val);
+  OBCI.channelDataInt[5] = (long) val;
+  float val_common = val;
+  AHP_val = val_common;
+  AHP_bp1 = &AHP_bandpass_filter9;
+  AHP_bp2 = &AHP_bandpass_filter10;
+  AHP_val = AHP_bp9->process(AHP_val);    //apply bandpass filter
+  AHP_val = AHP_bp10->process(AHP_val);    //do it again to make it even tighter
+  AHP_tmp5[ind_count] = AHP_val * AHP_val;
+  
+  
+  val = (float) OBCI.channelDataInt[5];
+  val = stopDC_filter6.process(val);
+  val = notch_filter11.process(val);     //apply 50Hz notch filter
+  val = notch_filter12.process(val);
+  OBCI.channelDataInt[6] = (long) val;
+  float val_common = val;
+  AHP_val = val_common;
+  AHP_bp1 = &AHP_bandpass_filter11;
+  AHP_bp2 = &AHP_bandpass_filter12;
+  AHP_val = AHP_bp11->process(AHP_val);    //apply bandpass filter
+  AHP_val = AHP_bp12->process(AHP_val);    //do it again to make it even tighter
+  AHP_tmp6[ind_count] = AHP_val * AHP_val;
+  
+  
+  val = (float) OBCI.channelDataInt[6];
+  val = stopDC_filter7.process(val);
+  val = notch_filter13.process(val);     //apply 50Hz notch filter
+  val = notch_filter14.process(val);
+  OBCI.channelDataInt[6] = (long) val;
+  float val_common = val;
+  AHP_val = val_common;
+  AHP_bp1 = &AHP_bandpass_filter13;
+  AHP_bp2 = &AHP_bandpass_filter14;
+  AHP_val = AHP_bp13->process(AHP_val);    //apply bandpass filter
+  AHP_val = AHP_bp14->process(AHP_val);    //do it again to make it even tighter  
+  AHP_tmp7[ind_count] = AHP_val * AHP_val;
+  
+  
+  val = (float) OBCI.channelDataInt[7];
+  val = stopDC_filter8.process(val);
+  val = notch_filter15.process(val);     //apply 50Hz notch filter
+  val = notch_filter16.process(val);
+  OBCI.channelDataInt[7] = (long) val;
+  float val_common = val;
+  AHP_val = val_common;
+  AHP_bp1 = &AHP_bandpass_filter15;
+  AHP_bp2 = &AHP_bandpass_filter16;
+  AHP_val = AHP_bp15->process(AHP_val);    //apply bandpass filter
+  AHP_val = AHP_bp16->process(AHP_val);    //do it again to make it even tighter
+  AHP_tmp8[ind_count] = AHP_val * AHP_val;
+  
 
   if (ind_count == 250) { // if we reached a full second
 
     // Calculate RMS value from 250 values (One Second)
     for (int i = 1; i < 251; i++) {
-      AHP = AHP + AHP_tmp[i];
-      BHP = BHP + BHP_tmp[i];
+       AHP1 = AHP1 + AHP_tmp1[i];
+       AHP2 = AHP2 + AHP_tmp2[i];
+       AHP3 = AHP3 + AHP_tmp3[i];
+       AHP4 = AHP4 + AHP_tmp4[i];
+       AHP5 = AHP5 + AHP_tmp5[i];
+       AHP6 = AHP6 + AHP_tmp6[i];
+       AHP7 = AHP7 + AHP_tmp7[i];
+       AHP8 = AHP8 + AHP_tmp8[i];
     }
 
 
-    AHP =  sqrt(abs(AHP / 250.0f));
-    BHP =  sqrt(abs(BHP / 250.0f));
+    AHP1 =  sqrt(abs(AHP1 / 250.0f));
+    AHP2 =  sqrt(abs(AHP2 / 250.0f));
+    AHP3 =  sqrt(abs(AHP3 / 250.0f));
+    AHP4 =  sqrt(abs(AHP4 / 250.0f));
+    AHP5 =  sqrt(abs(AHP5 / 250.0f));
+    AHP6 =  sqrt(abs(AHP6 / 250.0f));
+    AHP7 =  sqrt(abs(AHP7 / 250.0f));
+    AHP8 =  sqrt(abs(AHP8 / 250.0f));
 
 
-    Diff_H = (AHP * MICROVOLTS_PER_COUNT); // - (BHP*MICROVOLTS_PER_COUNT);
-    //
-    //    //------------ Noise Detection & Faulty Wire ------------//
-    //    //If the value is too high, skip this sample
-    if (cancelNoise) {
-      if (BHP * MICROVOLTS_PER_COUNT > B_Noise) {
-        ind_count = 1;
-        noise_ind++;
-        // Setup a lot of noise detection, it might be a sign of faulty wire, placement .. etc
-        if (noise_ind > 10) { // if noise last for 10 seconds
-          if (DetectNoise) {
-            float error_code = 911; // Use this to tell that we're receiving a lot of noise!
-            Serial0.write((float) error_code);
-          }
-        }
-        return;
-      }
-    }
-    else {
-      noise_ind = 0;
-    }
-    //---------- END: Noise Detection & Faulty Wire ----------//
-
-    if (UseStandardBase) {
-      A_HWT = 5.0f;
-      A_HST = 6.0f;
-    }
-    else {
-      // If no base
-      if (NoBase) {
-        base_HST[base_ind] = Diff_H;
-        array_BHT[base_ind] = BHP * MICROVOLTS_PER_COUNT;
-        if (base_ind == 34) {
-          for (int i = 5; i < 35; i++) {
-            base_AHST = base_AHST + base_HST[i];
-            base_BHT = base_BHT + array_BHT[i];
-          }
-          A_HWT = (base_AHST / 30);
-          A_HST = A_HWT + 3;
-
-          B_Noise =  (base_BHT / 30) + 5;
-
-          NoBase = false;
-
-          //          digitalWrite(MidAlert_OUTPUT_PIN, LOW);
-        }
-        else {
-          base_ind++;
-        }
-      }
-    }
-    if (UseStandardBase || !NoBase) {
-      //--------- Update Counter & Send Alert -------------//
-      if (Diff_H > A_HST) {
-        counter -= 20;
-        if (counter < 0) {
-          counter = 0;
-        }
-      }
-      if (Diff_H < A_HWT) {
-        counter += 20;
-        if (counter > 100) {
-          counter = 100;
-        }
-      }
-      // update LED value with counter value
-      if (counter >= 70) {
-        digitalWrite(Red_OUTPUT_PIN, LOW);
-      }
-      else if (counter < 70 & counter > 30) {
-        digitalWrite(Red_OUTPUT_PIN, HIGH);
-        digitalWrite(BUZZER_OUTPUT_PIN, LOW);
-      }
-      else if (counter <= 30) {
-        digitalWrite(BUZZER_OUTPUT_PIN, HIGH);
-        //sendAlert();
-      }
-    }
+    Diff_H1 = (AHP1 * MICROVOLTS_PER_COUNT); 
+    Diff_H2 = (AHP2 * MICROVOLTS_PER_COUNT); 
+    Diff_H3 = (AHP3 * MICROVOLTS_PER_COUNT); 
+    Diff_H4 = (AHP4 * MICROVOLTS_PER_COUNT); 
+    Diff_H5 = (AHP5 * MICROVOLTS_PER_COUNT); 
+    Diff_H6 = (AHP6 * MICROVOLTS_PER_COUNT); 
+    Diff_H7 = (AHP7 * MICROVOLTS_PER_COUNT); 
+    Diff_H8 = (AHP8 * MICROVOLTS_PER_COUNT); 
+    
     //--------- End: Update Counter ----------//
     ind_count = 1;
     if (printAlpha == true) {
-      Serial0.write((float) Diff_H);
+      Serial0.write((float) Diff_H1);
+      Serial0.write((float) Diff_H2);
+      Serial0.write((float) Diff_H3);
+      Serial0.write((float) Diff_H4);
+      Serial0.write((float) Diff_H5);
+      Serial0.write((float) Diff_H6);
+      Serial0.write((float) Diff_H7);
+      Serial0.write((float) Diff_H8);
     } else {
       Serial0.write((float) counter);
     }
   } // End of 250samples loop
 
-  OBCI.channelDataInt[4] = (long) AHP;
-  OBCI.channelDataInt[6] = (long) BHP;
-  OBCI.channelDataInt[7] = (long) counter;
   OBCI.update24bitData();
-
-  ind_count++;
+  int_count++;
+  
   //---------------- END: Update Counter & Act on data ------------------------//
 }
