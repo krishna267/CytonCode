@@ -389,7 +389,7 @@ float AHP_tmp1[250],AHP_tmp2[250],AHP_tmp3[250],AHP_tmp4[250],AHP_tmp5[250],AHP_
 float Diff_H1 = 0,Diff_H2 = 0,Diff_H3 = 0,Diff_H4 = 0,Diff_H5 = 0,Diff_H6 = 0,Diff_H7 = 0,Diff_H8 = 0;
 float AHP1 = 0,AHP2 = 0,AHP3 = 0,AHP4 = 0,AHP5 = 0,AHP6 = 0,AHP7 = 0,AHP8 = 0;
 
-void Run_AlphaDetector(int cn) {
+void Run_AlphaDetector(void) {
   float val, AHP_val;
 
   val = (float) OBCI.channelDataInt[0];
@@ -411,7 +411,7 @@ void Run_AlphaDetector(int cn) {
   val = notch_filter3.process(val);     //apply 50Hz notch filter
   val = notch_filter4.process(val);
   OBCI.channelDataInt[1] = (long) val;
-  float val_common = val;    
+  val_common = val;    
   AHP_val = val_common;
   AHP_bp1 = &AHP_bandpass_filter3;
   AHP_bp2 = &AHP_bandpass_filter4;
@@ -425,7 +425,7 @@ void Run_AlphaDetector(int cn) {
   val = notch_filter5.process(val);     //apply 50Hz notch filter
   val = notch_filter6.process(val);
   OBCI.channelDataInt[2] = (long) val;
-  float val_common = val;
+  val_common = val;
   AHP_val = val_common;
   AHP_bp1 = &AHP_bandpass_filter5;
   AHP_bp2 = &AHP_bandpass_filter6;
@@ -439,7 +439,7 @@ void Run_AlphaDetector(int cn) {
   val = notch_filter7.process(val);     //apply 50Hz notch filter
   val = notch_filter8.process(val);
   OBCI.channelDataInt[3] = (long) val;
-  float val_common = val;
+  val_common = val;
   AHP_val = val_common;
   AHP_bp1 = &AHP_bandpass_filter7;
   AHP_bp2 = &AHP_bandpass_filter8;
@@ -453,7 +453,7 @@ void Run_AlphaDetector(int cn) {
   val = notch_filter9.process(val);     //apply 50Hz notch filter
   val = notch_filter10.process(val);
   OBCI.channelDataInt[5] = (long) val;
-  float val_common = val;
+  val_common = val;
   AHP_val = val_common;
   AHP_bp1 = &AHP_bandpass_filter9;
   AHP_bp2 = &AHP_bandpass_filter10;
@@ -467,7 +467,7 @@ void Run_AlphaDetector(int cn) {
   val = notch_filter11.process(val);     //apply 50Hz notch filter
   val = notch_filter12.process(val);
   OBCI.channelDataInt[6] = (long) val;
-  float val_common = val;
+  val_common = val;
   AHP_val = val_common;
   AHP_bp1 = &AHP_bandpass_filter11;
   AHP_bp2 = &AHP_bandpass_filter12;
@@ -481,7 +481,7 @@ void Run_AlphaDetector(int cn) {
   val = notch_filter13.process(val);     //apply 50Hz notch filter
   val = notch_filter14.process(val);
   OBCI.channelDataInt[6] = (long) val;
-  float val_common = val;
+  val_common = val;
   AHP_val = val_common;
   AHP_bp1 = &AHP_bandpass_filter13;
   AHP_bp2 = &AHP_bandpass_filter14;
@@ -495,7 +495,7 @@ void Run_AlphaDetector(int cn) {
   val = notch_filter15.process(val);     //apply 50Hz notch filter
   val = notch_filter16.process(val);
   OBCI.channelDataInt[7] = (long) val;
-  float val_common = val;
+  val_common = val;
   AHP_val = val_common;
   AHP_bp1 = &AHP_bandpass_filter15;
   AHP_bp2 = &AHP_bandpass_filter16;
@@ -550,12 +550,12 @@ void Run_AlphaDetector(int cn) {
       Serial0.write((float) Diff_H7);
       Serial0.write((float) Diff_H8);
     } else {
-      Serial0.write((float) counter);
+//      Serial0.write("Not working");
     }
   } // End of 250samples loop
 
   OBCI.update24bitData();
-  int_count++;
+  ind_count++;
   
   //---------------- END: Update Counter & Act on data ------------------------//
 }
